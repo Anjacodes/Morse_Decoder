@@ -7,11 +7,8 @@ ALPHABET = {
 
 def decode(message)
   output_message = ''
-  words_array = message.split('   ', -1).map{|item| item.split(' ', -1)}
-  words_array.each do |word| 
-    word.each do |letter| 
-      output_message += ALPHABET[letter] 
-    end
+  message.split('   ', -1).map{|item| item.split(' ', -1)}.each do |word| 
+    word.each {|letter| output_message += ALPHABET[letter] }
     output_message += ' '
   end
   puts output_message
